@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+mestadata:
+  name: postgres-pod
+  labels:
+    name: postgres-pod
+    app: demo-voting-app
+  spec:
+    containers:
+      name: postgres
+      image: postgres
+      ports:
+        - containerPort: 5432
+#secrets as well as vault need to learn 
+      env:
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "postgres"
